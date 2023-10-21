@@ -1,7 +1,10 @@
 name: Refresh Step
 on:
-  schedule:
-    - cron: '5 11 * * *'
+  push:
+    branches:
+      - 'main'
+#  schedule:
+#    - cron: '5 11 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,4 +17,6 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Build with Maven Test
-        run: mvn test
+        run: mvn install -Dmaven.test.skip=true
+      - name: run jar
+        run: java -jar target/RefreshStep.jar
