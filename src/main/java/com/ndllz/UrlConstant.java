@@ -6,7 +6,7 @@ package com.ndllz;
  */
 public class UrlConstant {
     // 获取code
-    public static final String LOGIN_CODE_URL = "https://api-user.huami.com/registrations/+86{USERNAME}/tokens";
+    public static final String LOGIN_CODE_URL = "https://api-user.huami.com/registrations/{USERNAME}/tokens";
     public static final String REDIRECT_URL = "https://s3-us-west-2.amazonaws.com/hm-registration/successsignin.html";
 
     // 获取token
